@@ -27,8 +27,9 @@ def getValues(channel):
                 title = str(a.get('title'))
                 st = a.get('start')
                 start = st[11:16]
+                desc = a["episode"]["series"].get("description")
                 
-                theList.append(f"{start} Uhr: {title}")
+                theList.append(f"{start} Uhr: {title}\n{desc}\n")
     return theList
     
 with open("/tmp/plutoTV.txt", "w") as f:
